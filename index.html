@@ -532,7 +532,7 @@
                     <h2>HIT BALLOON GAME</h2>
                     <p style="font-size: 13px; margin-bottom: 6px;">Create your username for HIT BALLOON </p>
                     <div class="guide-badge">
-                        <i class="fas fa-info-circle"></i> <strong>Username Type : @USER_1234</strong><br>
+                        <i class="fas fa-info-circle"></i> <strong>Username Type : @rudra_108</strong><br>
                         • Start with <strong style="color:#fbbf24;">@</strong> symbol<br>
                         • <strong>letters, numbers or underscore</strong><br>
                         • Example: <code style="background:#00000060; padding:2px 6px; border-radius:12px;">@USER_123</code><br>
@@ -558,7 +558,7 @@
                 const clean = raw.slice(1);
                 if(clean.length < 4) { errorDiv.innerText = "❌ Minimum 4 characters after @ (e.g., @user123)"; return; }
                 if(clean.length > 20) { errorDiv.innerText = "❌ Maximum 20 characters allowed"; return; }
-                if(!/^[a-zA-Z0-9_-]+$/.test(clean)) { errorDiv.innerText = "❌ Only letters, numbers, underscore (_) and dash (-) allowed"; return; }
+                if(!/^[a-z0-9_-]+$/.test(clean)) { errorDiv.innerText = "❌ Only letters, numbers, underscore (_) and dash (-) allowed"; return; }
                 const finalName = `@${clean}`;
                 const existingUser = await get(ref(db, `registered_usernames/${finalName}`));
                 if(existingUser.exists()) { errorDiv.innerText = "❌ Username already taken! Choose another."; return; }
